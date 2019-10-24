@@ -1,0 +1,13 @@
+Інтерфейс використовується для того, щоб бути впевненим в тому, що клас має певні методи.
+    public interface NameOfInterface { ... }
+
+Клас може реалізовувати (implements) будь-яку кількість інтерфейсів.
+    public class NameOfClass implements NameOfInterface1, NameOfInterface2, ... { ... }
+
+У методів interface є тільки сигнатура та не може бути реалізації (тіла метода).
+    public void nameOfMethod();
+
+Всі методи інтерфейса повинні бути реалізовані в дічірньому класі.
+
+Якщо клас реалізує (implements) інтерфейс, то змінну інтерфейса можна посилати на об'єкт класа.
+    NameOfInterface nameOfInterface = new NameOfClass(...);
