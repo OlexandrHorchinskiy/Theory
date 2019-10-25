@@ -31,7 +31,6 @@ System.out.println("// Додавання елементів ///////////////////
         myArrayList.add(9);
         myArrayList.add(2);
         System.out.println("\"myArrayList\" після додавання 2-х елементів:                 " + myArrayList);
-
         // Додавання елемента на індекс 1 (існуючі елементи, починаючи з індекса 1, зміщуються на +один індекс)
         myArrayList.add(1, -5);
         System.out.println("\"myArrayList\" після додавання елемента по індексу 1:         " + myArrayList);

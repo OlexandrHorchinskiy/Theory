@@ -21,29 +21,31 @@ public class LinkedListExample {
     public static void main(String[] args) {
         LinkedList<String> myLinkedList = new LinkedList<>();
 
-System.out.println("// Додавання елементів ////////////////////////////////////////////////////////////////");
+        System.out.println("// Додавання елементів ////////////////////////////////////////////////////////////////");
         // Додавання елементів до "myLinkedList" (кожен наступний елемент додається в кінець)
         myLinkedList.add("Mercury");
-        myLinkedList.add("Earth");
-        myLinkedList.add("Earth");
-        System.out.println("\"myLinkedList\" після додавання елементів через .add:             " + myLinkedList);
-
-// TODO:
-//        myLinkedList.offer("Planet____");
-//        myLinkedList.offerFirst("Planet____");
-//        myLinkedList.offerLast("Planet____");
+        System.out.println("\"myLinkedList\" після додавання елемента через .add:              " + myLinkedList);
 
         // Додавання елемента на початок списку
         myLinkedList.addFirst("Neptune");
         System.out.println("\"myLinkedList\" після додавання елемента через .addFirst):        " + myLinkedList);
 
-        // Додавання елемента на початок списку
-        myLinkedList.push("Jupiter");
-        System.out.println("\"myLinkedList\" після додавання елемента через .push:             " + myLinkedList);
-
         // Додавання елемента в кінець списку
         myLinkedList.addLast("Saturn");
         System.out.println("\"myLinkedList\" після додавання елемента через .addLast:          " + myLinkedList);
+
+        myLinkedList.offer("Earth");
+        System.out.println("\"myLinkedList\" після додавання елемента через .offer:            " + myLinkedList);
+
+        myLinkedList.offerFirst("Mars");
+        System.out.println("\"myLinkedList\" після додавання елемента через .offerFirst:       " + myLinkedList);
+
+        myLinkedList.offerLast("Planet_3");
+        System.out.println("\"myLinkedList\" після додавання елемента через .offerLast:        " + myLinkedList);
+
+        // Додавання елемента на початок списку
+        myLinkedList.push("Jupiter");
+        System.out.println("\"myLinkedList\" після додавання елемента через .push:             " + myLinkedList);
 
         // Додавання елемента на визначений індекс, всі елементи починаючи з цього індекса зміщуються на +1 індекс
         myLinkedList.add(1, "Venus");
@@ -58,7 +60,8 @@ System.out.println("// Додавання елементів ///////////////////
         System.out.println("\"myLinkedList\" після додавання декількох елементів по індексу 2: " + myLinkedList);
 
 
-System.out.println("\n// Повернення елементів ///////////////////////////////////////////////////////////////");
+        System.out.println("\n// Повернення елементів ///////////////////////////////////////////////////////////////");
+        System.out.println("\"myLinkedList\": " + myLinkedList);
         String planet;
 
         // Повернути елемент по індексу
@@ -77,21 +80,33 @@ System.out.println("\n// Повернення елементів ///////////////
         planet = myLinkedList.peek();
         System.out.println("\"myLinkedList\" перший елемент:            " + planet);
 
-// TODO: planet = myLinkedList.peekFirst();
-// TODO: planet = myLinkedList.peekLast();
+        // Повернути перший елемент
+        planet = myLinkedList.peekFirst();
+        System.out.println("\"myLinkedList\" перший елемент:            " + planet);
+
+        // Повернути останній елемент
+        planet = myLinkedList.peekLast();
+        System.out.println("\"myLinkedList\" останній елемент:          " + planet);
+
+        // Повернути перший елемент
+        planet = myLinkedList.element();
+        System.out.println("\"myLinkedList\" перший елемент:            " + planet);
+
 
         // Повернути частину елементів списка
         LinkedList<String> myLinkedListPart = new LinkedList<>(myLinkedList.subList(2, 5));
         System.out.println("\"myLinkedList\" елементи з індекса 2 по 4: " + myLinkedListPart);
 
 
-System.out.println("\n// Оновлення значення елемента ////////////////////////////////////////////////////////");
+        System.out.println("\n// Оновлення значення елемента ////////////////////////////////////////////////////////");
+        System.out.println("\"myLinkedList\" до оновлення:                                   " + myLinkedList);
         // Оновлення значення елемента з індексом 3
         myLinkedList.set(3, "Planet_MY");
         System.out.println("\"myLinkedList\" після оновлення значення елемента з індексом 3: " + myLinkedList);
 
 
-System.out.println("\n// Сортування елементів ///////////////////////////////////////////////////////////////");
+        System.out.println("\n// Сортування елементів ///////////////////////////////////////////////////////////////");
+        System.out.println("\"myLinkedList\" до сортування:                            " + myLinkedList);
         // Сортування елементів від меншого до більшого
         Collections.sort(myLinkedList);
         System.out.println("\"myLinkedList\" після сортування від меншого до більшого: " + myLinkedList);
@@ -105,7 +120,8 @@ System.out.println("\n// Сортування елементів ///////////////
         System.out.println("\"myLinkedList\" після перемішування:                      " + myLinkedList);
 
 
-System.out.println("\n// Перевірка наявності ////////////////////////////////////////////////////////////////");
+        System.out.println("\n// Перевірка наявності ////////////////////////////////////////////////////////////////");
+        System.out.println("\"myLinkedList\": " + myLinkedList);
         // Перевірка чи пустий список
         boolean isEmpty = myLinkedList.isEmpty();
         System.out.println("чи \"myLinkedList\" пустий:                                " + isEmpty);
@@ -125,7 +141,8 @@ System.out.println("\n// Перевірка наявності /////////////////
         System.out.println("в \"myLinkedList\" наявні всі елементи з \"favorite1\":      " + isContains);
 
 
-System.out.println("\n// Повернення та видалення елементів //////////////////////////////////////////////////");
+        System.out.println("\n// Повернення та видалення елементів //////////////////////////////////////////////////");
+        System.out.println("\"myLinkedList\" до видалення елементів:                        " + myLinkedList);
         String removedPlanet;
 
         // Повернення та видалення першого елемента
@@ -168,7 +185,8 @@ System.out.println("\n// Повернення та видалення елеме
         System.out.println("\nзначення видаленого останнього елемента:                      " + removedPlanet);
         System.out.println("\"myLinkedList\" після видалення останнього елемента:           " + myLinkedList);
 
-System.out.println("\n// Видалення елементів ////////////////////////////////////////////////////////////////");
+        System.out.println("\n// Видалення елементів ////////////////////////////////////////////////////////////////");
+        System.out.println("\"myLinkedList\" до видалення елементів:                        " + myLinkedList);
         boolean isRemoved;
 
         // Видалення першого елемента зі вказаним значенням
@@ -203,7 +221,7 @@ System.out.println("\n// Видалення елементів /////////////////
         System.out.println("\n\"myLinkedList\" після видалення всіх елементів:                " + myLinkedList);
 
 
-System.out.println("\n// Об'єднання списків /////////////////////////////////////////////////////////////////");
+        System.out.println("\n// Об'єднання списків /////////////////////////////////////////////////////////////////");
         // Об'єднання списків
         LinkedList<String> forAdd = new LinkedList<>();
         forAdd.add("PlanetP");
@@ -213,7 +231,7 @@ System.out.println("\n// Об'єднання списків ////////////////////
         System.out.println("\"myLinkedList\" після об'єднання зі списком \"forAdd\": " + myLinkedList);
 
 
-System.out.println("\n// Інше ///////////////////////////////////////////////////////////////////////////////");
+        System.out.println("\n// Інше ///////////////////////////////////////////////////////////////////////////////");
         // Повернути розмір списка
         System.out.println("\"myLinkedList\" має розмір:                                           " + myLinkedList.size());
 

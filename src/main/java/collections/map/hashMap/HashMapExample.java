@@ -1,15 +1,12 @@
 package collections.map.hashMap;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Set;
+import java.util.*;
 
 public class HashMapExample {
     public static void main(String[] args) {
         HashMap<String, Double> planets = new HashMap<>();
 
-        System.out.println("// Додавання елементів ////////////////////////////////////////////////////////////////");
+System.out.println("// Додавання елементів ////////////////////////////////////////////////////////////////");
         // Додавання елементів до (кожен наступний елемент додається в кінець)
         planets.put("Mercury", 2439.7);
         planets.put("Earth", 6371d);
@@ -19,7 +16,7 @@ public class HashMapExample {
         System.out.println("\"planets\" після додавання елементів через: " + planets);
 
 
-        System.out.println("\n// Об'єднання списків /////////////////////////////////////////////////////////////////");
+System.out.println("\n// Об'єднання списків /////////////////////////////////////////////////////////////////");
         // Об'єднання списків
         HashMap<String, Double> forAdd = new HashMap<>();
         forAdd.put("Planet_A", 30000.3);
@@ -30,29 +27,35 @@ public class HashMapExample {
         System.out.println("\"planets\" після об'єднання зі списком \"forAdd\": " + planets);
 
 
-        System.out.println("\n// Повернення елементів ///////////////////////////////////////////////////////////////");
+System.out.println("\n// Повернення елементів ///////////////////////////////////////////////////////////////");
+        System.out.println("\"planets\": \n\t" + planets);
+        String key;
+        Double value;
+        Double defaultValue;
+
         // Повернення значення по ключу.
-        Double planetRadius;
-        String planetName = "Earth";
-        planetRadius = planets.get(planetName);
-        System.out.println("по ключу " + planetName + " знаходиться значення:  " + planetRadius);
+        key = "Earth";
+        value = planets.get(key);
+        System.out.println("по ключу " + key + " знаходиться значення:  " + value);
 
         // Повернення значення по ключу, якщо такого ключа не існує, повертається значення за замовчуванням (але не встановлюється).
-        String planetName2 = "Planet_X";
-        planetRadius = planets.getOrDefault(planetName2, 1.11);
-        System.out.println("по ключу " + planetName2 + " знаходиться значення: " + planetRadius);
+        key = "Planet_X";
+        defaultValue = 0.0;
+        value = planets.getOrDefault(key, defaultValue);
+        System.out.println("якщо ключ " + key + " відсутній, то значення " + defaultValue + ": " + value);
 
 
-        System.out.println("\n// Повернення та видалення елементів //////////////////////////////////////////////////");
+System.out.println("\n// Повернення та видалення елементів //////////////////////////////////////////////////");
         System.out.println("\"planets\": " + planets);
+
         // Повернення та видалення елемента по ключу.
         String planetName3 = "Planet_A";
-        planetRadius = planets.remove(planetName3);
-        System.out.println("\nпо ключу " + planetName3 + " видалено значення: " + planetRadius);
+        value = planets.remove(planetName3);
+        System.out.println("\nпо ключу " + planetName3 + " видалено значення: " + value);
         System.out.println("\"planets\": " + planets);
 
 
-        System.out.println("\n// Видалення елементів ////////////////////////////////////////////////////////////////");
+System.out.println("\n// Видалення елементів ////////////////////////////////////////////////////////////////");
         // Видалення елемента по ключу та значенню.
         boolean isRemoved;
         String planetName4 = "Planet_C";
@@ -61,15 +64,16 @@ public class HashMapExample {
         System.out.println("по ключу " + planetName4 + " та значенню " + planetRadius4 + " елемент видалено з \"planets\": " + isRemoved);
         System.out.println("\"planets\": " + planets);
 
+
 //        // Видалення всіх елементів списка.
 //        planets.clear();
 //        System.out.println("\n\"planets\" після видалення всіх елементів: " + planets);
 
 
-        System.out.println("\n// Оновлення значення елемента ////////////////////////////////////////////////////////");
+System.out.println("\n// Оновлення значення елемента ////////////////////////////////////////////////////////");
         System.out.println("\"planets\":                                                     " + planets);
         // Повернення значення елемента та його оновлення.
-        String key = "Planet_B";
+        key = "Planet_B";
         Double oldValue;
         Double newValue = 12345.6;
         oldValue = planets.replace(key, newValue);
@@ -88,7 +92,7 @@ public class HashMapExample {
 // TODO:        planets.replaceAll();
 
 
-        System.out.println("\n// Перевірка наявності ////////////////////////////////////////////////////////////////");
+System.out.println("\n// Перевірка наявності ////////////////////////////////////////////////////////////////");
         boolean isExist;
         boolean isEmpty;
 
@@ -105,7 +109,7 @@ public class HashMapExample {
         System.out.println("в \"planets\" наявний елемент зі значенням 58232: " + isExist);
 
 
-        System.out.println("\n// Інше ///////////////////////////////////////////////////////////////////////////////");
+System.out.println("\n// Інше ///////////////////////////////////////////////////////////////////////////////");
         // Повернути розмір списка.
         System.out.println("\"planets\" має розмір:   " + planets.size());
 
@@ -121,10 +125,6 @@ public class HashMapExample {
         System.out.println("\"planets\" має значення: " + arr);
 
 /*
-
-
-
-
 // множество элементов ввиде объектов интерфейса Map.Entry
         Set entries = planets.entrySet();
 
