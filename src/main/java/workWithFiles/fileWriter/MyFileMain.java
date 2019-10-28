@@ -1,6 +1,7 @@
 package workWithFiles.fileWriter;
 
-import javax.swing.*;
+import workWithFiles.chooserForFileOrDirectory.FileChooser;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -14,7 +15,7 @@ public class MyFileMain {
 
     // Метод для запису в файл
     public static void writerExample() throws IOException {
-        // Шлях до файлу (необхідно вказувати з кореня проекта).
+        // Вибір файла. Шлях до файлу необхідно вказувати з кореня проекта.
         String fs = File.separator;
         String pathToFile = "src" + fs + "main" + fs + "java" + fs + "workWithFiles" + fs + "fileWriter" + fs + "myFile.txt";
 
@@ -43,21 +44,15 @@ public class MyFileMain {
 
 
     // Метод для зчитування з файлу
-    private static void readerExample() throws FileNotFoundException {
-        // Вибір файла або директорії
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setFileSelectionMode(0); // можна вибрати тільки файл
-//        fileChooser.setFileSelectionMode(1); // можна вибрати тільки директорію
-//        fileChooser.setFileSelectionMode(2); // можна вибрати файл або директорію
-        fileChooser.showDialog(null, "Вибрати файл");
-        File myFile = fileChooser.getSelectedFile();
-        System.out.println("Вибраний файл: \n\tgetName: " + myFile.getName() + " | getPath: " + myFile.getPath());
-
-        // __________________________________________________
-        String pathToFile = myFile.getPath();
-        // Шлях до файлу необхідно вказувати з кореня проекта
-//        String fs = File.separator;
-//        String pathToFile = "src" + fs + "main" + fs + "java" + fs + "workWithFiles" + fs + "fileWriter" + fs + "myFile.txt";
+    public static void readerExample() throws FileNotFoundException {
+        // Вибір файла.
+        FileChooser fc = new FileChooser();
+        String pathToFile = fc.chooseFile().getPath();
+        /*
+        // Вибір файла. Шлях до файлу необхідно вказувати з кореня проекта.
+        String fs = File.separator;
+        String pathToFile = "src" + fs + "main" + fs + "java" + fs + "workWithFiles" + fs + "fileWriter" + fs + "myFile.txt";
+        */
 
         //Повідомлення про початок зчитування. DEL!
         System.out.println("Зчитування з файлу \"" + pathToFile + "\" ..."); // Повідомлення.
