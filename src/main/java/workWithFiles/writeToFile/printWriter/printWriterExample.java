@@ -1,4 +1,4 @@
-package workWithFiles.printWriter;
+package workWithFiles.writeToFile.printWriter;
 
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -1,4 +1,4 @@
-package workWithFiles.fileWriter;
+package workWithFiles.writeToFile.fileWriter;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -17,14 +17,9 @@ public class MyFileWriter {
     public boolean write(String text, boolean append) throws IOException {
         FileWriter writer = new FileWriter(path, append); // Створює FileWriter "writer", який приймає параметри шлях до файлу (path) та (append)
         writer.write(text); // Записує в буфер
-        writer.write("\n---------------------------------------------------------------------\n"); // Записує в буфер
+        writer.write("\n- - - - - - - - - - - - - - - - - - - - - \n"); // Записує в буфер
         writer.flush(); // Записує в файл
         writer.close(); // Закриває "writer"
         return true;
-    }
-
-    // Перевантажений метод "write" для запису в файл параметром "String text" (очищує файл та записує нові дані)
-    public boolean write(String text) throws IOException {
-        return write(text, false);
     }
 }

@@ -1,4 +1,4 @@
-package workWithFiles.fileWriter;
+package workWithFiles.readFromFile;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -16,12 +16,11 @@ public class MyFileReader {
     public String read() throws FileNotFoundException {
         FileInputStream stream = new FileInputStream(path); // FileInputStream "stream", який приймає параметр шлях до файлу (path)
         Scanner scanner = new Scanner(stream);
-        scanner.useDelimiter("\\Z"); // "useDelimiter("\\Z")" дає можливість зчитати файл до кінця
-        String data = scanner.next(); // Разом з "scanner.useDelimiter("\\Z");" зчитує файл до кінця
+        scanner.useDelimiter("\\Z"); // "useDelimiter("\\Z")" вказує на зчитування файлу до кінця.
+        String data = scanner.next(); // Разом з "scanner.useDelimiter("\\Z");" зчитує файл до кінця.
 
-//        System.out.println(scanner.nextLine()); // Зчитує наступний рядок з файлу
-//        System.out.println(scanner.next()); // Зчитує наступне слово, число чи символ до пропуску
-//        String data = "";
+//        System.out.println(scanner.nextLine()); // Зчитує наступний рядок з файлу.
+//        System.out.println(scanner.next()); // Зчитує наступне слово, число чи символ до пробілу.
 
         scanner.close(); // Закриває "scanner"
 
