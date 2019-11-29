@@ -1,16 +1,17 @@
 package zzzDifferent.parsingExchangeRateFromBanks;
 
 public class Currency {
-    private String name;
+    private String currencyLiteralCode;
     private Double purchaseRate;
     private Double sellingRate;
+    private String bankName;
 
-    public String getName() {
-        return name;
+    public String getCurrencyLiteralCode() {
+        return currencyLiteralCode;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCurrencyLiteralCode(String currencyLiteralCode) {
+        this.currencyLiteralCode = currencyLiteralCode;
     }
 
     public Double getPurchaseRate() {
@@ -29,12 +30,21 @@ public class Currency {
         this.sellingRate = sellingRate;
     }
 
+    public String getBankName() {
+        return bankName;
+    }
+
+    public void setBankName(String bankName) {
+        this.bankName = bankName;
+    }
+
     @Override
     public String toString() {
         return "\nCurrency{" +
-                "name='" + name + '\'' +
+                "currencyLiteralCode=" + currencyLiteralCode +
                 ", purchaseRate=" + purchaseRate +
                 ", sellingRate=" + sellingRate +
+                ", bankName='" + bankName + '\'' +
                 '}';
     }
 }
