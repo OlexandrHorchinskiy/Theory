@@ -7,11 +7,8 @@ import java.net.URL;
 import java.util.concurrent.*;
 
 public class HTTPDownloadExample {
-
     public static void main(String[] args) throws IOException, ExecutionException, InterruptedException {
         Callable<String> httpRequest = () -> {
-
-
             URL url = new URL("http://www.google.com.ua"); // В дужках вказано куди звертатися
             HttpURLConnection connection = (HttpURLConnection) url.openConnection(); // Відчиняє URL (підключення до сервера)
             connection.setRequestMethod("GET"); // "GET", "POST", "UPDATE" - типи HttpURLConnection
@@ -24,7 +21,6 @@ public class HTTPDownloadExample {
             while (( b = reader.read() ) != -1) { // перевіряє чи не закінчився stream
                 html += ( (char) b );
             }
-
 
             return html;
         };

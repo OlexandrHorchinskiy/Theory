@@ -1,7 +1,5 @@
-import java.util.Scanner;
-
 /*
- * Перетворює число записане як String в масив цифр та виводить масив цифр в консоль
+ * Перетворює число записане як String в масив цифр та виводить масив цифр в консоль.
  */
 public class NumberInStringToNumeralArray {
     public static void main(String[] args) {

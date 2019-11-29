@@ -1,19 +1,21 @@
 package workWithString.Tests;
 
 /*
-* Перетворює стрічку в масив символів та виводить масив символів в консоль
-*/
+ * Перетворення стрічки в масив символів.
+ */
 public class StringToCharArray {
     public static void main(String args[]) {
-        String str = "JAVA a programming language.";
+        String inputData = "JAVA a programming language.";
+
 
         // Перетворює стрічку в масив символів
-        char[] strToArray = str.toCharArray();
+        char[] inputDataCharArray = inputData.toCharArray();
 
-        // Вивід масива в консоль
-        System.out.print("Фраза \"" + str + "\" складається з наступних символів: ");
-        for (int i = 0; i < strToArray.length; i++) {
-            System.out.print(strToArray[i] + "; ");
+
+        // Вивід масива символів в консоль.
+        System.out.print("Стрічка \"" + inputData + "\" складається з наступних символів: ");
+        for (int i = 0; i < inputDataCharArray.length; i++) {
+            System.out.print(inputDataCharArray[i] + "; ");
         }
     }
 }

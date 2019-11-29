@@ -1,4 +1,4 @@
-package workWithInternet;
+package zzzDifferent.parsingExchangeRateFromBanks;
 
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;

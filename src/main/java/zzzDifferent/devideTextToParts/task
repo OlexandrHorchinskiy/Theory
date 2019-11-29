@@ -1,0 +1,70 @@
+You have a long piece of text, and you want to send it to your friend as a series of SMS messages.
+Your text consists of English letters (uppercase and lowercase) and spaces.
+The text doesn't contain any leading spaces at the beginning or trailing spaces at the end.
+There are no two consecutive spaces in the text.
+
+One proper SMS can contain at most K characters. If the text is longer, it needs to be split into parts.
+Each part should be sent in a separate message that fulfills the maximum length requirement. Text may not be split within words.
+The order of the words and the messages can't change, so that we can later concatenate the resulting messages to retrieve the original text.
+Spaces at the start and end of all messages are removed, and thus are not accounted for in the overall message length.
+
+The goal is to count the number of SMS messages needed to accommodate the whole text, keeping the length of each message
+less than or equal to K.
+The total number of SMS messages must be kept to a minimum, however; it would not be acceptable, for example,
+to take the wasteful approach of programmatically sending one SMS for each word in the original text!
+
+Write a function: function solution(S, K);
+
+that, given a string S representing the text that needs to be split and an integer K that is equal to the maximum
+possible message length, returns the number of SMS messages needed.
+
+For instance, given string S="SMS messages are really short" and K = 12, your function should return 3.
+You could split this text into proper messages as follows:
+
+"SMS messages" "are really" "short"
+
+If it's impossible to split text into proper SMS messages, your function should return −1.
+
+Assume that:
+
+K is an integer within the range [1..500];
+S is a non-empty string containing at most 500 characters: only letters and spaces,
+there are no spaces at the beginning and at the end of S; also there can't be two or more consecutive spaces in S.
+In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
+
+------------------------------------------------------------------------------------------------------------------------
+У вас довгий фрагмент тексту, і ви хочете надіслати його своєму другові у вигляді серії SMS-повідомлень.
+Ваш текст складається з англійських літер (великі і малі) та пробіли.
+Текст не містить провідних пробілів на початку або пробілів у кінці.
+У тексті немає двох послідовних пробілів.
+
+Один правильний SMS може містити не більше K символів.
+Якщо текст довший, його потрібно розділити на частини.
+Кожна частина повинна бути надіслана в окремому повідомленні, яке відповідає вимозі максимальної довжини.
+Текст може не розділятися всередині слова.
+Порядок слів і повідомлень не може змінитися, тому ми зможемо згодом з'єднати отримані повідомлення для отримання початкового тексту.
+Проміжки на початку та в кінці всіх повідомлень видаляються, тому вони не враховуються загальною довжиною повідомлення.
+
+Мета - підрахувати кількість SMS-повідомлень, необхідних для вміщення всього тексту,
+зберігаючи довжину кожного повідомлення менше або дорівнює K.
+Загальна кількість SMS-повідомлень повинна бути зведена до мінімуму;
+Наприклад, було б неприйнятно марнотратно підходити програмно надсилати по одному SMS на кожне слово в оригінальному тексті!
+
+Написати функцію: функціональне рішення (S, K);
+що, з огляду на рядок S, що представляє текст, який потрібно розділити, і ціле число K,
+що дорівнює максимально можливій довжині повідомлення, повертає кількість необхідних SMS-повідомлень.
+
+Наприклад, з урахуванням рядка S = "SMS-повідомлення дійсно короткі" та K = 12, ваша функція повинна повернутися 3.
+Ви можете розділити цей текст на відповідні повідомлення наступним чином:
+
+"SMS-повідомлення" "дійсно" "короткі"
+
+Якщо неможливо розділити текст на належні SMS-повідомлення, ваша функція повинна повернути -1.
+
+Припустимо, що:
+
+K - ціле число в межах [1..500];
+S - не порожня рядок, що містить максимум 500 символів: лише букви та пробіли, пробілів на початку та в кінці S немає;
+також не може бути двох або більше послідовних пробілів у S. У своєму рішенні зосередьтеся на правильності.
+
+Виконання вашого рішення не буде в центрі уваги оцінювання.
